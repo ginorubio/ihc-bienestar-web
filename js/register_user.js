@@ -103,3 +103,9 @@ container_form.addEventListener('submit', (e) => {
         document.getElementById('form_mesage_ok').style.display='none';
 	}
 });
+
+function error_general(){
+    console.log("Todo Algo anda mal");
+	document.getElementById('form_mesage').style.display='block';
+    ocument.getElementById('form_mesage_ok').style.display='none';
+}
