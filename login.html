@@ -14,6 +14,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/login.css" as="style">
     <title>Login</title>
 </head>
@@ -27,23 +28,23 @@
     
     <div class="contenedor">
         <h2>Inicio de Sesion:</h2>
-        <form method="POST">
+        <form method="POST" class="container_form" id="container_form">
             <div class="elemento-text">
                 <label for="usuario">Usuario:</label>
-                <input type="text">
+                <input class="field_input" type="email" id="email" name="email" placeholder="...@unmsm.edu.pe">
             </div>
+            
             <div class="elemento-text">
                 <label for="password">Contraseña:</label>
-                <input type="password">
+                <input class="field_input" type="password" id="password" name="password" placeholder="********">
+            </div>
+            <div class="form_mesage" id= "form_mesage">
+              <b>Error:</b> Ingrese correctamente su correo institucional y/o su contraseña.
             </div>
             <div class="centrados">
-                <input type="button" id="sesion" value="Iniciar Sesion" onclick="inciarSesion()" />
-            </div>
-            <div class="centrados">
-                <label for="actualizarPassword">¿Olvidaste tu contraseña?</label>
-            </div>
-            <div class="centrados">
-                <input type="button" id="registrar" value="Registrarse" onclick="registrar()" />
+                <p><input type="submit" id="sesion" value="Iniciar Sesion"/></p>
+                <p><label for="actualizarPassword"><u>¿Olvidaste tu contraseña?</u></label></p>
+                <p><input type="button" id="registrar" value="Registrarse" onclick="registrar()" /></p>
             </div>
         </form>
         
@@ -53,9 +54,12 @@
             © Facultad de ingeniería de Sistemas e Informática - Proyecto IHC
         </div>
     </footer>
+    <script src="js/login.js"></script>
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
 </body>
 </html>
 <!-- partial -->
-  
+  <script  src="./script.js"></script>
+
 </body>
 </html>
