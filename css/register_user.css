@@ -1,47 +1,134 @@
 html{
     height: 100%;
+    
 }
 body{
     margin:0;
     padding: 0;
-    background-color:#F7F9F9;
+    font-family: 'Asap', sans-serif;
+    background-color:#E5E5E5;
     
 }
+
 .header{
     background: #70191c;
     width: 100%;
+    top:0; 
+    position: sticky; 
 }
-.cabecera{
+header a{
+    color: #fff;
+    text-decoration: none;
+}
+.cab{
     display: inline-flex;
     
 }
-.titulo{
-    color: #fff;
-}
+
 img{
     width: 80px;
     height: 80px;
     padding: 0px 25px 0px 25px;
 }
-.contenedor{
-    background-color: #fff;
+.container{
+    padding: 25px;
+	background: #E5E5E5;
     width: 50%;
     margin: auto;
+    /*box-shadow:1px 0 4px rgb(0, 0, 0,.2) ;*/
     
 }
-form{
-    text-align: left;
+/*
+.field{
+    display: inline-block;
+}   */
+/*
+.field{
+    display: flex;
+    justify-content: space-between;
+}*/
+.field_label {
+	display: block;
+	font-weight: 700;
+	padding: 10px 0 10px 0;
+	cursor: pointer;
+}
+
+.field_input {
+	width: 50%;
+	background: #fff;
+	border: 3px solid transparent;
+	border-radius: 3px;
+	height: 35px;
+	line-height: 45px;
+	padding: 0 40px 0 10px;
+	transition: .3s ease all;
+}
+.field_input:focus{
+    border: 3px solid #0075FF;
+	outline: none;
+}
+
+/*
+.field_cbox{
+    display: flex;
+    flex-flow: row wrap;
+    
+}
+/*
+.form_validation_state{
+    position:relative;
+    right: 30px;
+}*/
+.input_error {
+	/*position:sticky ;*/
+	right: 10px;
+	bottom: 15px;
+	/*z-index: 100;*/
+	font-size: 12px;
+	/*opacity: 0;*/
 }
 h2{
     margin: 0px;
-    padding: 25px;
-    text-align: center;
+    /*padding: 25px 25px 0px 25px; */
+    text-align: left;
 }
 .elemento-text{
     
     display: flex;
     justify-content: space-between;
-    padding: 25px 100px 25px 50px;
+    padding: 15px 100px 15px 100px;
+    
+    border-radius: 5px;
+    margin: 25px ;
+}
+/*.elemento-text:hover{
+   border: 0.5px solid #5D6D7E;
+}*/
+/*
+.campo{
+    text-align: left;
+    width: 100%;
+}
+.campo:focus{
+    border: 3px solid #0075FF;
+	outline: none;
+	box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
+}*/
+.buttons{
+    display: flex;
+    justify-content: space-evenly;
+}
+.form_mesage{
+    height: 45px;
+	line-height: 45px;
+	background: #F66060;
+	padding: 0 15px;
+	border-radius: 3px;
+	display: none;
+}
+.form_mesage_ok{
+    display: none;
 }
 
 footer{
