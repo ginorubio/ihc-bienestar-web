@@ -1,6 +1,6 @@
 const container_form = document.getElementById('container_form');
 const inputs =document.querySelectorAll('#container_form input');
-
+const registrar=document.getElementById('registrar');
 const expressions={
     password: /(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/,
     email:/\w+@+[u]+[n]+[m]+[s]+[m]\.+[e]+[d]+[u]\.+[p]+[e]/,
@@ -32,6 +32,11 @@ inputs.forEach((input) => {
 });
 
 
+
+registrar.addEventListener('click',(e)=>{
+    window.location="register_user.html";
+});
+
 container_form.addEventListener('submit', (e) => {
 	e.preventDefault();
 	if(fields.password && fields.email){
@@ -45,4 +50,6 @@ container_form.addEventListener('submit', (e) => {
 		document.getElementById('form_mesage').style.display='block';
         /*document.getElementById('form_mesage_ok').style.display='none';*/
 	}
+    
 });
+
