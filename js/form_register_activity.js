@@ -4,8 +4,8 @@ const inputs = document.querySelectorAll('#form_activity input, #modality, #type
 const expresiones = {
 	nombre: /^[1-9a-zA-ZÀ-ÿ\s]{1,50}$/, // Letras y espacios, pueden llevar acentos.
 	organizador: /^[a-zA-ZÀ-ÿ\s]{1,50}$/,
-	descripcion: /^[1-9a-zA-ZÀ-ÿ\s]{1,200}$/, // Letras y espacios, pueden llevar acentos.
-    reglas: /^[1-9a-zA-ZÀ-ÿ\s]{1,200}$/, // Letras y espacios, pueden llevar acentos.
+	descripcion: /^[1-9a-zA-ZÀ-ÿ\s]{1,5}$/, // Letras y espacios, pueden llevar acentos.
+    reglas: /^[1-9a-zA-ZÀ-ÿ\s]{1,5}$/, // Letras y espacios, pueden llevar acentos.
 }
 
 const fields = {
