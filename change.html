@@ -5,14 +5,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style_jonatan.css" />
+    <link rel="stylesheet" href="style_jonatan.css" />
     <title>Cambiando contraseña</title>
 </head>
 
 <body>
     <header>
         <div class="cabecera">
-            <img src="img/logo_fisi.png" alt="logo fisi">
+            <img src="logo-fisi.png" alt="logo fisi">
             <h1 class="titulo">Sistema de Gestión de Actividades Culturales y Deportivas</h1>
         </div>
     </header>
@@ -20,22 +20,25 @@
         <div class="form">
             <h2>Cambiando Contraseña</h2>
             <div class="grupo">
-                <input type="password" name="" id="password" required>
+                <input type="password" name="password1" id="password" required>
                 <span class="barra"> </span>
                 <label for="">Contraseña</label>
             </div>
             <div class="grupo">
-                <input type="password" name="" id="password_repeat"required />
+                <input type="password" name="password2" id="password_repeat"required />
                 <span class="barra"> </span>
                 <label for="">Repetir Contraseña</label>
             </div>
+            <p class="aviso" id="aviso"> (*) La contraseña debe ser de al menos 8 caracteres
+            tener una Mayuscula, un numero y un caracter especial</p>
+            
             <button type="submit">Confirmar</button>
             <p class="warnings3" id="warnings"></p>
 
         </div>
     </form>
 
-    <script src="js/change.js"> </script>
+    <script src="change.js"> </script>
 </body>
 
 </html>
