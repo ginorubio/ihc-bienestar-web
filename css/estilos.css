@@ -86,7 +86,11 @@ a {
 
 
 /*INICIAR SESION***************************************************/
-
+.InicioSesion{
+    
+    display: flex;
+    align-items: flex-start;
+}
 .InicioSesion nav {
     height: 100%;
 }
