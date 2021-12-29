@@ -5,8 +5,6 @@ body{
     margin:0;
     padding: 0;
     font-family: 'Asap', sans-serif;
-
-    
 }
 .header{
     position: sticky;
@@ -36,26 +34,34 @@ img{
     
     padding: 25px;
 	background: #E5E5E5;
-    width: 50%;
+    max-width: 60%;
     margin: auto;
 }
 .container_form{
-    display: grid;
-	grid-template-columns: 1fr 1fr;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    
 	gap: 20px;
 }
 .field{
-    margin: 25px;
+    margin: 0 45px 0px 45px;
 }   
 
-
+.field_column{
+    position: relative;
+   
+}
 .field_label {
 	display: block;
 	font-weight: 700;
 	padding: 10px 0 10px 0;
 	cursor: pointer;
 }
-
+.field_cbox{
+    margin: 0 45px 0px 45px;
+    display: inline-flex;
+    align-items: center;
+}
 .field_input {
     width: auto;
 	background: #fff;
@@ -66,7 +72,7 @@ img{
 	padding: 0 40px 0 10px;
 	transition: .3s ease all;
 }
-.field_input:focus{
+.field_input:focus, .field_input:hover{
     border: 3px solid #0075FF;
 	outline: none;
 }
@@ -89,19 +95,24 @@ select{
     right: 30px;
     opacity: 0;
 }
-.form_validation_state_ok{
+.form_validation_state_ok {
     color: #1ed12d;
 	opacity: 1;
 }
-.form_validation_state_fail{
+.form_validation_state_fail {
     color: #bb2929;
 	opacity: 1;
 }
-
+.field_label_error{
+    color:#bb2929;
+}
+.field_input_error{
+    border: 3px solid #bb2929;;
+}
 
 h2{
     margin: 0px;
-
+    margin-bottom: 25px;
     text-align: center;
 }
 .elemento-text{
@@ -114,9 +125,10 @@ h2{
     margin: 25px ;
 }
 
-
-.buttons button{
-    margin: 30px;
+button{
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
 	height: 45px;
 	line-height: 45px;
 	width: 30%;
@@ -145,4 +157,19 @@ footer{
     color: #fff;
     padding: 25px;
     
+}
+@media screen and (max-width: 800px) {
+	.container_form {
+		grid-template-columns: 1fr;
+	}
+
+
+	.form_mesage,
+	.formulario__btn {
+		grid-column: 1;
+	}
+
+	.formulario__btn {
+		width: 100%;
+	}
 }

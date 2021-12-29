@@ -8,6 +8,9 @@ body{
 
     
 }
+main{
+    max-height: max-content;
+}
 header{
     position: sticky;
     top: 0;
@@ -32,11 +35,25 @@ img{
     padding: 0px 25px 0px 25px;
 }
 .menu{
-  
+    text-align: center;
+    display: flexbox;
+    align-items: center;
+}
+.caja{
+    border-radius: 5px;
+    background-color: burlywood;
+    padding: 25px;
+    margin:25px auto 25px auto;
+    max-width: 250px;
+}
+a{
+   
+    text-decoration: none;
 }
 footer{
     background-color: black;
     color: #fff;
     padding: 25px;
-    
+    bottom: 0;
+    margin-bottom: 0;
 }
