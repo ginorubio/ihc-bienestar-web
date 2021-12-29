@@ -5,6 +5,7 @@ const expressions={
     first_name:/^[a-zA-ZÀ-ÿ\s]{1,40}$/,
     last_name:/^[a-zA-ZÀ-ÿ\s]{1,40}$/,
     password: /^.{8,20}$/,
+    confirm_pass: /^.{8,20}$/,
     email:/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
     cellphone: /^\d{9,9}$/,
     code: /^\d{8,8}$/,
@@ -18,7 +19,9 @@ const fields={
     email:false,
     cellphone: false,
     code: false,
-    user:false
+    user:false,
+    eap:false,
+    confirm_pass:false
 }
 
 const validation_form=(e)=>{
@@ -46,8 +49,11 @@ const validation_form=(e)=>{
             
             break;  
         case "confirm_pass":
-            validation_field(expressions.password, e.target, 'password');
+            validation_field(expressions.password, e.target, 'confirm_pass');
             validation_confirm_pass();
+            break;
+        case "eap":
+            validation_eap(e.target, 'eap');
             break;
     }
 }
@@ -59,7 +65,8 @@ const validation_field = (expression, input, field) => {
         document.querySelector(`#group_${field} i`).classList.remove('form_validation_state_fail');
         document.querySelector(`#group_${field} i`).classList.add('fa-check-circle');	
         document.querySelector(`#group_${field} i`).classList.add('form_validation_state_ok');	
-        
+        document.querySelector(`#group_${field} label`).classList.remove('field_label_error');
+        document.querySelector(`#group_${field} input`).classList.remove('field_input_error');
         document.querySelector(`#group_${field} p`).style.display='none';
 		fields[field] = true;
 
@@ -69,6 +76,8 @@ const validation_field = (expression, input, field) => {
 		document.querySelector(`#group_${field} i`).classList.add('fa-times-circle');
         document.querySelector(`#group_${field} i`).classList.add('form_validation_state_fail');
         document.querySelector(`#group_${field} p`).style.display='block';
+        document.querySelector(`#group_${field} label`).classList.add('field_label_error');
+        document.querySelector(`#group_${field} input`).classList.add('field_input_error');
 		fields[field] = false;
 	
     }
@@ -76,12 +85,14 @@ const validation_field = (expression, input, field) => {
 const validation_confirm_pass = () => {
     const pass=document.getElementById("password").value;
     const confirm_pass=document.getElementById("confirm_pass").value;
-	if(pass!=confirm_pass ){
+    console.log(pass)
+	if(pass!=confirm_pass || confirm_pass==""){
+        
         document.querySelector(`#group_confirm_pass i`).classList.remove('fa-check-circle');
         document.querySelector(`#group_confirm_pass  i`).classList.remove('form_validation_state_ok');	
         document.querySelector(`#group_confirm_pass i`).classList.add('form_validation_state_fail');	
 		document.querySelector(`#group_confirm_pass i`).classList.add('fa-times-circle');
-		
+		document.querySelector(`#group_confirm_pass p`).style.display='block';
 		fields['password'] = false;
 
 	} else {
@@ -89,14 +100,36 @@ const validation_confirm_pass = () => {
         document.querySelector(`#group_confirm_pass i`).classList.remove('form_validation_state_fail');
 		document.querySelector(`#group_confirm_pass i`).classList.add('fa-check-circle');
         document.querySelector(`#group_confirm_pass i`).classList.add('form_validation_state_ok');	
-		
+		document.querySelector(`#group_confirm_pass p`).style.display='none';
 		fields['password'] = true;
+	
+    }
+}
+const validation_eap = (input,field) => {
+    console.log("holaaa");
+	if(input.value!=0){
+        document.querySelector(`#group_${field}  i`).classList.remove('fa-times-circle');
+        document.querySelector(`#group_${field}  i`).classList.remove('form_validation_state_fail');
+		document.querySelector(`#group_${field}  i`).classList.add('fa-check-circle');
+        document.querySelector(`#group_${field}  i`).classList.add('form_validation_state_ok');	
+		document.querySelector(`#group_${field}  p`).style.display='none';
+		fields[field] = true;
+
+	} else {
+        document.querySelector(`#group_${field}  i`).classList.remove('fa-check-circle');
+        document.querySelector(`#group_${field}  i`).classList.remove('form_validation_state_ok');	
+        document.querySelector(`#group_${field}  i`).classList.add('form_validation_state_fail');	
+		document.querySelector(`#group_${field}  i`).classList.add('fa-times-circle');
+		document.querySelector(`#group_${field}  p`).style.display='block';
+		fields[field] = false;
+
 	
     }
 }
 inputs.forEach((input) => {
 	input.addEventListener('keyup', validation_form);
 	input.addEventListener('blur', validation_form);
+    input.addEventListener('change', validation_form);
 });
 
 container_form.addEventListener('submit', (e) => {
@@ -107,10 +140,10 @@ container_form.addEventListener('submit', (e) => {
 		container_form.reset();
         document.getElementById('form_mesage').style.display='none';
         document.getElementById('form_mesage_ok').style.display='block';
-        console.log("Todo ok");
+        
         window.location="index.html";
 	} else {
-        console.log("Todo Algo anda mal");
+        
 		document.getElementById('form_mesage').style.display='block';
         document.getElementById('form_mesage_ok').style.display='none';
 	}
