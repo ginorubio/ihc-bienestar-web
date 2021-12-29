@@ -1,20 +1,22 @@
 html{
     height: 100%;
-    
 }
 body{
     margin:0;
     padding: 0;
     font-family: 'Asap', sans-serif;
-    background-color:#E5E5E5;
+
     
 }
-
 .header{
-    background: #70191c;
+    position: sticky;
+    top: 0;
+    left: 0;
     width: 100%;
-    top:0; 
-    position: sticky; 
+    height: 80px;
+    background-color: rgb(88, 35, 35);
+    box-shadow: 0 4px 25px -22px black;
+    z-index: 2;
 }
 header a{
     color: #fff;
@@ -31,22 +33,22 @@ img{
     padding: 0px 25px 0px 25px;
 }
 .container{
+    
     padding: 25px;
 	background: #E5E5E5;
     width: 50%;
     margin: auto;
-    /*box-shadow:1px 0 4px rgb(0, 0, 0,.2) ;*/
-    
 }
-/*
+.container_form{
+    display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 20px;
+}
 .field{
-    display: inline-block;
-}   */
-/*
-.field{
-    display: flex;
-    justify-content: space-between;
-}*/
+    margin: 25px;
+}   
+
+
 .field_label {
 	display: block;
 	font-weight: 700;
@@ -55,7 +57,7 @@ img{
 }
 
 .field_input {
-	width: 50%;
+    width: auto;
 	background: #fff;
 	border: 3px solid transparent;
 	border-radius: 3px;
@@ -69,29 +71,38 @@ img{
 	outline: none;
 }
 
-/*
-.field_cbox{
-    display: flex;
-    flex-flow: row wrap;
-    
+
+select{
+    width: 100%;
 }
-/*
-.form_validation_state{
-    position:relative;
-    right: 30px;
-}*/
+
 .input_error {
-	/*position:sticky ;*/
+    color: #bb2929;
 	right: 10px;
 	bottom: 15px;
-	/*z-index: 100;*/
-	font-size: 12px;
-	/*opacity: 0;*/
+	font-size: 14px;
+    display: none;
 }
+
+.form_validation_state{
+    position: relative;
+    right: 30px;
+    opacity: 0;
+}
+.form_validation_state_ok{
+    color: #1ed12d;
+	opacity: 1;
+}
+.form_validation_state_fail{
+    color: #bb2929;
+	opacity: 1;
+}
+
+
 h2{
     margin: 0px;
-    /*padding: 25px 25px 0px 25px; */
-    text-align: left;
+
+    text-align: center;
 }
 .elemento-text{
     
@@ -102,22 +113,20 @@ h2{
     border-radius: 5px;
     margin: 25px ;
 }
-/*.elemento-text:hover{
-   border: 0.5px solid #5D6D7E;
-}*/
-/*
-.campo{
-    text-align: left;
-    width: 100%;
-}
-.campo:focus{
-    border: 3px solid #0075FF;
-	outline: none;
-	box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
-}*/
-.buttons{
-    display: flex;
-    justify-content: space-evenly;
+
+
+.buttons button{
+    margin: 30px;
+	height: 45px;
+	line-height: 45px;
+	width: 30%;
+	background: #000;
+	color: #fff;
+	font-weight: bold;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+	transition: .1s ease all;
 }
 .form_mesage{
     height: 45px;

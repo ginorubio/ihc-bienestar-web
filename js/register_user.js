@@ -43,9 +43,10 @@ const validation_form=(e)=>{
             break;
         case "password":
             validation_field(expressions.password, e.target, 'password');
-            validation_confirm_pass();
+            
             break;  
         case "confirm_pass":
+            validation_field(expressions.password, e.target, 'password');
             validation_confirm_pass();
             break;
     }
@@ -54,13 +55,20 @@ const validation_form=(e)=>{
 const validation_field = (expression, input, field) => {
 	if(expression.test(input.value)){
 
-		document.querySelector(`#group_${field} i`).classList.remove('fa-times-circle');	
+		document.querySelector(`#group_${field} i`).classList.remove('fa-times-circle');
+        document.querySelector(`#group_${field} i`).classList.remove('form_validation_state_fail');
         document.querySelector(`#group_${field} i`).classList.add('fa-check-circle');	
+        document.querySelector(`#group_${field} i`).classList.add('form_validation_state_ok');	
+        
+        document.querySelector(`#group_${field} p`).style.display='none';
 		fields[field] = true;
 
 	} else {
+        document.querySelector(`#group_${field} i`).classList.remove('fa-check-circle');
+        document.querySelector(`#group_${field} i`).classList.remove('form_validation_state_ok');	
 		document.querySelector(`#group_${field} i`).classList.add('fa-times-circle');
-		document.querySelector(`#group_${field} i`).classList.remove('fa-check-circle');
+        document.querySelector(`#group_${field} i`).classList.add('form_validation_state_fail');
+        document.querySelector(`#group_${field} p`).style.display='block';
 		fields[field] = false;
 	
     }
@@ -68,15 +76,19 @@ const validation_field = (expression, input, field) => {
 const validation_confirm_pass = () => {
     const pass=document.getElementById("password").value;
     const confirm_pass=document.getElementById("confirm_pass").value;
-	if(pass!=confirm_pass){
+	if(pass!=confirm_pass ){
         document.querySelector(`#group_confirm_pass i`).classList.remove('fa-check-circle');
+        document.querySelector(`#group_confirm_pass  i`).classList.remove('form_validation_state_ok');	
+        document.querySelector(`#group_confirm_pass i`).classList.add('form_validation_state_fail');	
 		document.querySelector(`#group_confirm_pass i`).classList.add('fa-times-circle');
 		
 		fields['password'] = false;
 
 	} else {
         document.querySelector(`#group_confirm_pass i`).classList.remove('fa-times-circle');
+        document.querySelector(`#group_confirm_pass i`).classList.remove('form_validation_state_fail');
 		document.querySelector(`#group_confirm_pass i`).classList.add('fa-check-circle');
+        document.querySelector(`#group_confirm_pass i`).classList.add('form_validation_state_ok');	
 		
 		fields['password'] = true;
 	

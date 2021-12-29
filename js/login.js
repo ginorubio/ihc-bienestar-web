@@ -44,7 +44,8 @@ container_form.addEventListener('submit', (e) => {
         document.getElementById('form_mesage').style.display='none';
         /*document.getElementById('form_mesage_ok').style.display='block';*/
         console.log("Todo ok");
-        window.location="index.html";
+        
+        window.location="menu.html";
 	} else {
         console.log("Todo Algo anda mal");
 		document.getElementById('form_mesage').style.display='block';
