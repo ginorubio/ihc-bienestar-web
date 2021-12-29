@@ -123,16 +123,28 @@ form.addEventListener('submit', (e) => {
 
 		form.reset();
 
-		document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
-		setTimeout(() => {
-			document.getElementById('formulario__mensaje-exito').classList.remove('formulario__mensaje-exito-activo');
-		}, 5000);
+		Swal.fire({
+			position: 'top-center',
+			icon: 'success',
+			title: 'Registro exitoso',
+			showConfirmButton: true,
+		});
 
 		document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
 			icono.classList.remove('formulario__grupo-correcto');
 		});
 		document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo');
 		document.getElementById('espacio').classList.remove('formulario__mensaje-activo');
+
+		fields['nombre'] = false;
+		fields['organizador'] = false;
+		fields['modalidad'] = false;
+		fields['tipo'] = false;
+		fields['reglas'] = false;
+		fields['descripcion'] = false;
+		fields['fInicio'] = false;
+		fields['fFin'] = false;
+
 	} else {
 		document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
 		document.getElementById('espacio').classList.add('formulario__mensaje-activo');
