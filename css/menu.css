@@ -35,25 +35,33 @@ img{
     padding: 0px 25px 0px 25px;
 }
 .menu{
+    
     text-align: center;
     display: flexbox;
     align-items: center;
+    margin-top:50px;
+    margin-bottom: 50px;
 }
 .caja{
     border-radius: 5px;
-    background-color: burlywood;
+    background-color: #A93226;
     padding: 25px;
-    margin:25px auto 25px auto;
+    margin:30px auto 30px auto;
     max-width: 250px;
 }
+.caja:hover{
+    background-color: #641E16;
+}
 a{
-   
+   color: white;
     text-decoration: none;
 }
+
 footer{
     background-color: black;
     color: #fff;
     padding: 25px;
     bottom: 0;
     margin-bottom: 0;
+    height: 60px;
 }

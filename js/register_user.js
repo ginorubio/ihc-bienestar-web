@@ -4,8 +4,8 @@ const inputs =document.querySelectorAll('#container_form input');
 const expressions={
     first_name:/^[a-zA-ZÀ-ÿ\s]{1,40}$/,
     last_name:/^[a-zA-ZÀ-ÿ\s]{1,40}$/,
-    password: /^.{8,20}$/,
-    confirm_pass: /^.{8,20}$/,
+    password: /(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/,
+    confirm_pass:/(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/,
     email:/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
     cellphone: /^\d{9,9}$/,
     code: /^\d{8,8}$/,
@@ -141,10 +141,14 @@ container_form.addEventListener('submit', (e) => {
 	const term = document.getElementById('cbox_term');
 	if(fields.code && fields.last_name && fields.user && fields.first_name && fields.password && fields.email && fields.cellphone && term.checked ){
 		container_form.reset();
-        document.getElementById('form_mesage').style.display='none';
-        document.getElementById('form_mesage_ok').style.display='block';
-        
-        window.location="index.html";
+        console.log("Todo esta ok");
+        Swal.fire({
+			position: 'top-center',
+			icon: 'success',
+			title: 'Registro exitoso',
+			showConfirmButton: false,
+		});
+        window.location='home.html';
 	} else {
         
 		document.getElementById('form_mesage').style.display='block';
