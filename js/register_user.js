@@ -132,6 +132,9 @@ inputs.forEach((input) => {
     input.addEventListener('change', validation_form);
 });
 
+function cancelar(){
+    window.location="index.html";
+}
 container_form.addEventListener('submit', (e) => {
 	e.preventDefault();
 
