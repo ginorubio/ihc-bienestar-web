@@ -5,6 +5,9 @@ body{
     margin:0;
     padding: 0;
     background-image:url("https://luiscavibotsample.s3-sa-east-1.amazonaws.com/assets/noticias/san-marcos-primer-lugar-webometrics.png");
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
     
 }
 .header{
