@@ -15,11 +15,12 @@ header {
     background: #70191c;
     box-shadow: 0 4px 25px -22px blue;
     z-index: 2;
+    color: #ffffff;
+    
 }
 
 .header-content {
-    max-width: 1200px;
-    margin: auto;
+    max-width: 100%;
     display: flex;
     justify-content: space-between;
 }
@@ -27,10 +28,18 @@ header {
 .logo {
     height: 80px;
     display: flex;
-    justify-content: center;
+    justify-content:left;
+    align-self:flex-start;
+}
+h3.titulo{
+    max-width: 300px;
     align-self: center;
 }
 
+.menu{
+    position:relative;
+    align-self:center;
+}
 a {
     text-decoration: none;
 }
@@ -75,7 +84,7 @@ a {
 }
 
 .menu nav ul li a {
-    color: burlywood;
+    color: white;
     font-size: 25px;
 }
 
@@ -84,41 +93,51 @@ a {
     border-bottom: 2px solid black;
 }
 
+.perfil nav{
+    height: 100%;
 
-/*INICIAR SESION***************************************************/
-.InicioSesion{
+}
+.perfil nav ul{
     
+    float: left;
     display: flex;
-    align-items: flex-start;
 }
-.InicioSesion nav {
-    height: 100%;
-}
-
-.InicioSesion nav ul {
-    height: 100%;
-    display: flex;
+.perfil nav ul li{
+    float: left;
     list-style: none;
-}
-
-.InicioSesion nav ul li {
-    height: 100%;
-    margin: 0px 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     position: relative;
 }
-
-.InicioSesion nav ul li a {
-    color: burlywood;
-    font-size: 25px;
+.icono{
+    margin: 0 30px;
+}
+.perfil nav ul li  a{
+    display: block;
+    text-decoration: none;
+    line-height: 50px;
+    color: white;
+}
+.perfil nav ul li ul{
+    display: none;
+    position: absolute;
+    background-color:#70191c ;
+}
+.perfil nav ul li:hover ul{
+    display: block;
+}
+.perfil nav ul li ul li {
+    width: 100%;
+}
+.perfil nav ul li ul li:hover {
+    background-color: black;
+}
+.perfil nav ul li ul li a{
+    padding: 10px;
+    line-height: unset;
+    white-space: nowrap;
 }
 
-.InicioSesion nav ul li a:hover {
-    color: black;
-    border-bottom: 2px solid black;
-}
+
+
 
 
 /**** ACTIVIDAD PRINCIPAL*****************************************/

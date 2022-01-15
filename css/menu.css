@@ -12,21 +12,24 @@ main{
     max-height: max-content;
 }
 header{
+    
     position: sticky;
     top: 0;
     left: 0;
     width: 100%;
     height: 80px;
-    background-color: rgb(88, 35, 35);
+    background-color: #70191c;
     box-shadow: 0 4px 25px -22px black;
     z-index: 2;
 }
 header a{
     color: #fff;
     text-decoration: none;
+    
 }
 .cab{
     display: inline-flex;
+    
     
 }
 img{
@@ -52,8 +55,13 @@ img{
 .caja:hover{
     background-color: #641E16;
 }
-a{
-   color: white;
+.caja a{
+    
+    position: relative;
+    padding: 25px 50px;
+    margin:30px auto 30px auto;
+    width: 100%;
+    color: white;
     text-decoration: none;
 }
 
@@ -64,4 +72,44 @@ footer{
     bottom: 0;
     margin-bottom: 0;
     height: 60px;
+}
+
+
+.perfil nav ul{
+    
+    float: left;
+    display: flex;
+}
+.perfil nav ul li{
+    float: left;
+    list-style: none;
+    position: relative;
+}
+.icono{
+    margin: 0 30px;
+}
+.perfil nav ul li  a{
+    display: block;
+    text-decoration: none;
+    line-height: 25px;
+    color: white;
+}
+.perfil nav ul li ul li:hover {
+    background-color: black;
+}
+.perfil nav ul li ul{
+    display: none;
+    position: absolute;
+    background-color:#70191c ;
+}
+.perfil nav ul li:hover ul{
+    display: block;
+}
+.perfil nav ul li ul li {
+    width: 100%;
+}
+.perfil nav ul li ul li a{
+    padding: 10px;
+    line-height: unset;
+    white-space: nowrap;
 }

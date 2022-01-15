@@ -38,18 +38,21 @@ registrar.addEventListener('click',(e)=>{
 });
 
 container_form.addEventListener('submit', (e) => {
+    email=document.getElementById('email');
+    pass=document.getElementById('password');
 	e.preventDefault();
 	if(fields.password && fields.email){
-		container_form.reset();
+		
         document.getElementById('form_mesage').style.display='none';
-        /*document.getElementById('form_mesage_ok').style.display='block';*/
-        console.log("Todo ok");
-        
-        window.location="menu.html";
+        if(email.value==='rosa@unmsm.edu.pe'){
+            
+            window.location='menu.html';
+        }else{
+            window.location='home.html';
+        }
+        container_form.reset();
 	} else {
-        console.log("Todo Algo anda mal");
 		document.getElementById('form_mesage').style.display='block';
-        /*document.getElementById('form_mesage_ok').style.display='none';*/
 	}
     
 });

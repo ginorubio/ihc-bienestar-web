@@ -133,7 +133,7 @@ inputs.forEach((input) => {
 });
 
 function cancelar(){
-    window.location="index.html";
+    window.location="login.html";
 }
 container_form.addEventListener('submit', (e) => {
 	e.preventDefault();
@@ -141,14 +141,13 @@ container_form.addEventListener('submit', (e) => {
 	const term = document.getElementById('cbox_term');
 	if(fields.code && fields.last_name && fields.user && fields.first_name && fields.password && fields.email && fields.cellphone && term.checked ){
 		container_form.reset();
-        console.log("Todo esta ok");
         Swal.fire({
 			position: 'top-center',
 			icon: 'success',
 			title: 'Registro exitoso',
 			showConfirmButton: false,
 		});
-        window.location='home.html';
+        window.location='login.html';
 	} else {
         
 		document.getElementById('form_mesage').style.display='block';
@@ -157,7 +156,6 @@ container_form.addEventListener('submit', (e) => {
 });
 
 function error_general(){
-    console.log("Todo Algo anda mal");
 	document.getElementById('form_mesage').style.display='block';
     ocument.getElementById('form_mesage_ok').style.display='none';
 }
